@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sách Việt</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="TrangChu.html">
+        <img src="Logoweb.png" alt="Logo">
+      </a>
+      <span>Sách Việt</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm sách...">
+      <button id="searchButton"><i class="fas fa-search"></i></button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <div class="icons">
+      <a href="giohang.html" class="icon-link">
+        <i class="fas fa-shopping-cart"></i> <span>Giỏ hàng</span>
+      </a>
+      <a href="taikhoan.html" class="icon-link">
+        <i class="fas fa-user"></i> <span>Tài khoản</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sub-menu -->
+  <nav class="sub-menu">
+    <div class="menu-left">
+      <div class="dropdown">
+        <div class="dropdown-title"><i>☰</i> DANH MỤC SÁCH</div>
+        <div class="dropdown-content">
+          <a href="kynangsong.html">Kỹ năng sống</a>
+          <a href="vanhoc.html">Văn học</a>
+          <a href="thieunhi.html">Thiếu nhi</a>
+          <a href="hocduong.html">Học đường</a>
+          <a href="ngoaingu.html">Ngoại ngữ</a>
+        </div>
+      </div>
+      <div class="other-menu">
+        <a href="Tintuc.html">Tin tức</a>
+        <a href="Lienhe.html">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="1600w-h4TXEWcWuhQ.png" alt="Banner" />
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <!-- Bên trái: Sách bán chạy -->
+    <div class="left-sidebar">
+      <aside class="sidebar best-sellers-cards">
+        <h3>SÁCH BÁN CHẠY</h3>
+        <a href="detail.html?bookId=dac-nhan-tam" class="book-card-link">
+          <div class="book-card">
+            <img src="Đắc nhân tâm.jpg" alt="Đắc Nhân Tâm">
+            <div class="book-info">
+              <p class="title">Đắc Nhân Tâm</p>
+              <p class="price">85.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="detail.html?bookId=7-thoi-quen" class="book-card-link">
+          <div class="book-card">
+            <img src="7 thói quen hiệu quả.jpg" alt="7 Thói Quen Hiệu Quả">
+            <div class="book-info">
+              <p class="title">7 Thói Quen Hiệu Quả</p>
+              <p class="price">99.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="detail.html?bookId=tuoi-tre-dang-gia" class="book-card-link">
+          <div class="book-card">
+            <img src="Tuổi trẻ đáng giá bao nhiêu.jpg" alt="Tuổi trẻ đáng giá bao nhiêu">
+            <div class="book-info">
+              <p class="title">Tuổi trẻ đáng giá bao nhiêu</p>
+              <p class="price">76.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="detail.html?bookId=nha-gia-kim" class="book-card-link">
+          <div class="book-card">
+            <img src="Nhà giả kim.jpg" alt="Nhà giả kim">
+            <div class="book-info">
+              <p class="title">Nhà giả kim</p>
+              <p class="price">79.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="detail.html?bookId=think-grow-rich" class="book-card-link">
+          <div class="book-card">
+            <img src="Think and grow.png" alt="Think and grow">
+            <div class="book-info">
+              <p class="title">Think and grow</p>
+              <p class="price">95.000đ</p>
+            </div>
+          </div>
+        </a>
+      </aside>
+      <aside class="sidebar new-books-cards">
+        <h3>SÁCH MỚI</h3>
+        <a href="detail.html?bookId=sach-moi-1" class="book-card-link">
+          <div class="book-card">
+            <img src="sachmoi1.jpg" alt="Sách Mới 1">
+            <div class="book-info">
+              <p class="title">Sách Mới 1</p>
+              <p class="price">100.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="detail.html?bookId=sach-moi-2" class="book-card-link">
+          <div class="book-card">
+            <img src="sachmoi2.jpg" alt="Sách Mới 2">
+            <div class="book-info">
+              <p class="title">Sách Mới 2</p>
+              <p class="price">120.000đ</p>
+            </div>
+          </div>
+        </a>
+      </aside>
+    </div>
+
+    <!-- Bên phải: Sách kỹ năng sống -->
+    <div class="right-products">
+      <section class="products">
+        <h2>Trang chủ</h2>
+        <div class="tabs">
+          <span class="active" id="searchTitle">Hiển thị cho: Trang chủ</span>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <a href="detail.html?bookId=tu-duy-nhanh-cham" class="product-link">
+            <div class="product">
+              <img src="book1.jpg" alt="Book 1">
+              <p>Sách: Tư Duy Nhanh Và Chậm</p>
+              <span class="price">112.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=dung-bao-gio-an-mot-minh" class="product-link">
+            <div class="product">
+              <img src="book2.jpg" alt="Book 2">
+              <p>Sách: Đừng bao giờ đi ăn một mình</p>
+              <span class="price">98.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=suc-manh-thoi-quen" class="product-link">
+            <div class="product">
+              <img src="book3.jpg" alt="Book 3">
+              <p>Sách: Sức mạnh của thói quen</p>
+              <span class="price">88.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=doi-ngan-dung-ngu-dai" class="product-link">
+            <div class="product">
+              <img src="book4.jpg" alt="Book 4">
+              <p>Sách: Đời ngắn đừng ngủ dài</p>
+              <span class="price">76.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=quang-ganh-lo-di" class="product-link">
+            <div class="product">
+              <img src="book5.jpg" alt="Book 5">
+              <p>Sách: Quẳng gánh lo đi và vui sống</p>
+              <span class="price">80.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=di-tim-le-song" class="product-link">
+            <div class="product">
+              <img src="book6.jpg" alt="Book 6">
+              <p>Sách: Đi tìm lẽ Sống</p>
+              <span class="price">110.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=dam-bi-ghet" class="product-link">
+            <div class="product">
+              <img src="book7.jpg" alt="Book 7">
+              <p>Sách: Dám bị ghét</p>
+              <span class="price">96.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=lam-chu-tu-duy" class="product-link">
+            <div class="product">
+              <img src="book8.jpg" alt="Book 8">
+              <p>Sách: Làm chủ tư duy</p>
+              <span class="price">90.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=thuc-tinh-muc-dich-song" class="product-link">
+            <div class="product">
+              <img src="book9.jpg" alt="Book 9">
+              <p>Sách: Thức tỉnh mục đích Sống</p>
+              <span class="price">105.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=bat-dau-voi-cau-hoi-tai-sao" class="product-link">
+            <div class="product">
+              <img src="book10.jpg" alt="Book 10">
+              <p>Sách: Bắt đầu với câu hỏi tại sao</p>
+              <span class="price">115.000đ</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Hai hình ảnh nằm ngang -->
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <img src="banner1.jpg" alt="Banner 1" style="width: 50%; height: auto;">
+          <img src="Thêm tiêu đề.png" alt="Banner 2" style="width: 50%; height: auto;">
+        </div>
+
+        <!-- Các sản phẩm còn lại -->
+        <div class="product-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px;">
+          <a href="detail.html?bookId=doraemon" class="product-link">
+            <div class="product">
+              <img src="doraemon.jpg" alt="Doraemon">
+              <p>Sách: Bộ Truyện Tranh Dành Cho Trẻ Em - Doraemon</p>
+              <span class="price">60.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=toan-lop-1" class="product-link">
+            <div class="product">
+              <img src="toan-lop-1.jpg" alt="Cùng Học Toán Lớp 1">
+              <p>Sách: Cùng Học Toán Lớp 1</p>
+              <span class="price">45.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=my-first-words" class="product-link">
+            <div class="product">
+              <img src="my-first-words.jpg" alt="My First Words">
+              <p>Sách: Tiếng Anh Cho Bé - My First Words</p>
+              <span class="price">55.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=truyen-co-tich" class="product-link">
+            <div class="product">
+              <img src="truyen-co-tich.jpg" alt="Truyện Cổ Tích Việt Nam">
+              <p>Sách: Truyện Cổ Tích Việt Nam</p>
+              <span class="price">65.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=nguoi-dua-dieu" class="product-link">
+            <div class="product">
+              <img src="nguoi-dua-dieu.jpg" alt="Người Đua Diều">
+              <p>Sách: Người Đua Diều</p>
+              <span class="price">120.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=hoa-hoc-lop-9" class="product-link">
+            <div class="product">
+              <img src="hoa-hoc-lop-9.jpg" alt="Hóa Học Lớp 9 - Bài Tập Nâng Cao">
+              <p>Sách: Hóa Học Lớp 9 - Bài Tập Nâng Cao</p>
+              <span class="price">72.000đ</span>
+            </div>
+          </a>
+          <a href="detail.html?bookId=english-grammar-in-use" class="product-link">
+            <div class="product">
+              <img src="english-grammar-in-use.jpg" alt="English Grammar in Use">
+              <p>Sách: English Grammar in Use</p>
+              <span class="price">130.000đ</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container mx-auto">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Về Sách Việt</h4>
+          <p>Giới thiệu</p>
+          <p>Điều khoản</p>
+          <p>Chính sách bảo mật</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <p>Hướng dẫn mua hàng</p>
+          <p>Chính sách đổi trả</p>
+          <p>Phương thức thanh toán</p>
+        </div>
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <p>Email: sachviet@gmail.com.vn</p>
+          <p>Hotline: 0966 160 925</p>
+        </div>
+        <div class="footer-col">
+          <h4>Theo dõi chúng tôi</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-6 border-t border-gray-700 pt-4">
+        <p>© 2025 SACHVIET. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+   // Hàm debounce để hạn chế tần suất gọi hàm tìm kiếm
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Hàm tìm kiếm sách và hiển thị kết quả trong khung
+function searchBooks() {
+  let input = document.getElementById('searchInput').value.toLowerCase(); // Lấy giá trị đầu vào và chuyển thành chữ thường
+  let products = document.querySelectorAll('.product'); // Lấy tất cả sản phẩm
+  let searchResults = document.getElementById('searchResults'); // Lấy khung kết quả
+  searchResults.innerHTML = ''; // Xóa nội dung cũ
+
+  if (!input.trim()) {
+    searchResults.style.display = 'none'; // Ẩn khung nếu không có từ khóa
+    return;
+  }
+
+  let results = []; // Mảng lưu kết quả tìm kiếm
+
+  // Duyệt qua sản phẩm để tìm khớp từ khóa
+  products.forEach(product => {
+    let title = product.querySelector('p').textContent.toLowerCase();
+    if (title.includes(input)) {
+      let link = product.parentElement.getAttribute('href');
+      let titleText = product.querySelector('p').textContent;
+      let price = product.querySelector('.price').textContent;
+      results.push({ title: titleText, link, price });
+    }
+  });
+
+  // Hiển thị kết quả trong khung
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div class="no-results">Không tìm thấy sách nào phù hợp</div>';
+  } else {
+    results.forEach(result => {
+      let resultItem = document.createElement('div');
+      resultItem.className = 'search-result-item';
+      resultItem.innerHTML = `
+        <a href="${result.link}">
+          <strong>${result.title}</strong>
+          <div>${result.price}</div>
+        </a>
+      `;
+      searchResults.appendChild(resultItem);
+    });
+  }
+
+  searchResults.style.display = 'block'; // Hiển thị khung kết quả
+}
+
+// Hàm xử lý khi nhấn nút tìm hoặc Enter
+function handleSearch() {
+  let input = document.getElementById('searchInput').value.toLowerCase().trim(); // Lấy giá trị và loại bỏ khoảng trắng
+  let products = document.querySelectorAll('.product');
+  let searchResults = document.getElementById('searchResults');
+  let firstResult = null;
+
+  // Nếu ô tìm kiếm rỗng, hiển thị thông báo và không chuyển hướng
+  if (!input) {
+    searchResults.innerHTML = '<div class="no-results">Vui lòng nhập từ khóa tìm kiếm</div>';
+    searchResults.style.display = 'block';
+    return;
+  }
+
+  // Tìm sản phẩm đầu tiên khớp
+  products.forEach(product => {
+    let title = product.querySelector('p').textContent.toLowerCase();
+    if (title.includes(input) && !firstResult) {
+      firstResult = product.parentElement.getAttribute('href');
+    }
+  });
+
+  // Chuyển hướng đến trang chi tiết nếu có kết quả
+  if (firstResult) {
+    window.location.href = firstResult;
+  } else {
+    searchResults.innerHTML = '<div class="no-results">Không tìm thấy sách nào phù hợp</div>';
+    searchResults.style.display = 'block';
+  }
+}
+
+// Gắn sự kiện nhập liệu với debounce
+document.getElementById('searchInput').addEventListener('input', debounce(searchBooks, 300));
+
+// Gắn sự kiện click cho nút tìm kiếm
+document.getElementById('searchButton').addEventListener('click', handleSearch);
+
+// Gắn sự kiện nhấn Enter
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    handleSearch();
+  }
+});
+
+// Ẩn khung kết quả khi nhấp ra ngoài
+document.addEventListener('click', function(e) {
+  let searchBar = document.querySelector('.search-bar');
+  if (!searchBar.contains(e.target)) {
+    document.getElementById('searchResults').style.display = 'none';
+  }
+});
+  </script>
+</body>
+</html>

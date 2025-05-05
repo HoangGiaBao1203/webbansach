@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sách</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #dfe6e9;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .search-bar input:focus {
+      border-color: #74b9ff;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #74b9ff, #4a69bd);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar button:hover {
+      background: linear-gradient(135deg, #4a69bd, #74b9ff);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(74, 185, 255, 0.3);
+    }
+
+    .icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .icon-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #2d3436;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .icon-link:hover {
+      color: #74b9ff;
+    }
+
+    /* Sub-menu Styles */
+    .sub-menu {
+      background: gray;
+      padding: 10px 40px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .menu-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #dfe6e9;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .dropdown-title:hover {
+      background: #e9ecef;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      min-width: 150px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #2d3436;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background: #f0f4f8;
+    }
+
+    .other-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .other-menu a {
+      color: #2d3436;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .other-menu a:hover {
+      color: #74b9ff;
+    }
+    .banner {
+  width: 100%;
+  height: 600px; 
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    
+    .main {
+      width: 100%;
+      max-width: 1200px;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      background: #ffffff;
+      border-radius: 20px;
+      margin: 30px auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      flex: 1;
+    }
+
+    .book-detail-container {
+      display: flex;
+      padding: 40px;
+      min-height: 600px;
+    }
+
+    .book-detail-container:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+
+    .book-detail-image img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid #e9ecef;
+      transition: all 0.3s ease;
+      object-fit: cover;
+    }
+
+    .book-detail-image img:hover {
+      transform: scale(1.05);
+      border-color: #74b9ff;
+    }
+
+    .book-detail-info {
+      flex: 1;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .book-detail-info h1 {
+      margin: 0 0 15px;
+      color: #2d3436;
+      font-size: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .rating {
+      font-size: 24px;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .rating .stars {
+      color: #f1c40f;
+      text-shadow: 0 0 6px rgba(241, 196, 15, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .rating .stars:hover {
+      transform: scale(1.1);
+    }
+
+    .rating .review-count {
+      font-size: 15px;
+      color: #636e72;
+      margin-left: 15px;
+    }
+
+    .price {
+      color: #ff4757;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 20px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      margin: 25px 0;
+      gap: 15px;
+    }
+
+    .quantity-selector span {
+      font-size: 17px;
+      color: #2d3436;
+      font-weight: 500;
+    }
+
+    .quantity-selector button {
+      background: linear-gradient(135deg, #74b9ff, #4a69bd);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .quantity-selector button:hover {
+      background: linear-gradient(135deg, #4a69bd, #74b9ff);
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(74, 185, 255, 0.3);
+    }
+
+    .quantity-selector button:active {
+      transform: scale(1);
+      box-shadow: none;
+    }
+
+    .quantity-selector input {
+      width: 60px;
+      text-align: center;
+      border: 1px solid #dfe6e9;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #f8f9fa;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: border-color 0.3s ease;
+    }
+
+    .quantity-selector input:focus {
+      border-color: #74b9ff;
+      outline: none;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .add-to-cart-btn, .buy-now-btn {
+      padding: 14px 40px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .add-to-cart-btn {
+      background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    }
+
+    .add-to-cart-btn:hover {
+      background: linear-gradient(135deg, #ff4757, #ff6b6b);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(255, 71, 87, 0.3);
+    }
+
+    .buy-now-btn {
+      background: linear-gradient(135deg, #2ed573, #26a65b);
+    }
+
+    .buy-now-btn:hover {
+      background: linear-gradient(135deg, #26a65b, #2ed573);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(46, 213, 115, 0.3);
+    }
+
+    .description {
+      margin-top: 30px;
+      line-height: 1.9;
+      color: #57606f;
+    }
+
+    .description h3 {
+      color: #2d3436;
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .services {
+      margin-top: 30px;
+      border-top: 1px solid #e9ecef;
+      padding-top: 20px;
+    }
+
+    .services h3 {
+      color: #2d3436;
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .services p {
+      color: #57606f;
+      margin: 10px 0;
+    }
+
+    .promotions {
+      margin-top: 30px;
+      border-top: 1px solid #e9ecef;
+      padding-top: 20px;
+    }
+
+    .promotions h3 {
+      color: #2d3436;
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .promotions ul {
+      list-style-type: none;
+      padding: 0;
+      color: #57606f;
+    }
+
+    .promotions ul li {
+      margin: 10px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .promotions ul li:before {
+      content: "✓";
+      color: #2ed573;
+      position: absolute;
+      left: 0;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        margin: 20px 10px;
+        padding: 20px 10px;
+      }
+
+      .book-detail-container {
+        flex-direction: column;
+        padding: 20px;
+        min-height: 500px;
+      }
+
+      .book-detail-info {
+        padding-left: 0;
+        padding-top: 25px;
+      }
+
+      .book-detail-image img {
+        max-width: 100%;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .add-to-cart-btn, .buy-now-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+
+      .search-bar input {
+        width: 100%;
+      }
+
+      .icons {
+        justify-content: center;
+      }
+
+      .sub-menu {
+        padding: 10px 20px;
+      }
+
+      .menu-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .other-menu {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div class="book-detail-container">
+      <div class="book-detail-image">
+        <img id="book-img" src="https://via.placeholder.com/250x350" alt="Bìa sách">
+      </div>
+      <div class="book-detail-info">
+        <div>
+          <h1 id="book-title">KÝ LƯỢT BẬN THÂN</h1>
+          <div class="rating">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="review-count">(120 đánh giá)</span>
+          </div>
+          <div class="price" id="book-price"></div>
+          <div class="quantity-selector">
+            <span>Số Lượng:</span>
+            <button id="decrease">-</button>
+            <input type="text" id="quantity" value="1" readonly>
+            <button id="increase">+</button>
+          </div>
+          <div class="action-buttons">
+            <button class="add-to-cart-btn" id="add-to-cart">Thêm Vào Giỏ Hàng</button>
+            <button class="buy-now-btn" id="buy-now">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="description">
+          <h3>Mô tả sách</h3>
+          <p id="book-description"></p>
+        </div>
+        <div class="services">
+          <h3>Dịch vụ của chúng tôi</h3>
+          <p>Giao hàng nhanh trong 3 - 7 ngày làm việc.</p>
+          <p>Miễn phí giao hàng Toàn Quốc cho đơn hàng trên 300k.</p>
+        </div>
+        <div class="promotions">
+          <h3>Dịch vụ & Khuyến mãi</h3>
+          <ul>
+            <li>Đổi vỡ sản phẩm giảm 40% - 50% - 70% (sản phẩm xả kho): Mỗi khách hàng được mua tối đa 3 sản phẩm/1 mã hàng/1 đơn hàng</li>
+            <li>Tặng kèm Bookmark (đánh dấu trang) cho các sách Kinh doanh, Mẹ và Bé, Văn học</li>
+            <li>FREESHIP cho đơn hàng từ 300K trở lên</li>
+            <li>Tặng kèm 1 VOUCHER 20K cho đơn từ 500K trở lên</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="detail.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookId = urlParams.get('bookId');
+
+      const bookData = booksDatabase[bookId];
+
+      const bookImgElement = document.getElementById('book-img');
+      const bookTitleElement = document.getElementById('book-title');
+      const bookPriceElement = document.getElementById('book-price');
+      const bookDescriptionElement = document.getElementById('book-description');
+      const pageTitleElement = document.querySelector('title');
+
+      if (bookData) {
+        bookImgElement.src = bookData.img;
+        bookImgElement.alt = bookData.title;
+        bookTitleElement.textContent = bookData.title;
+        bookPriceElement.textContent = bookData.price;
+        bookDescriptionElement.textContent = bookData.description;
+        pageTitleElement.textContent = bookData.title;
+      } else {
+        const detailContainer = document.querySelector('.book-detail-container');
+        if (detailContainer) {
+          detailContainer.innerHTML = `
+            <div style="text-align: center; padding: 40px;">
+              <h1 style="color: #2d3436;">Không tìm thấy thông tin sách</h1>
+              <p style="color: #57606f;">Vui lòng quay lại trang chủ.</p>
+            </div>`;
+        }
+        pageTitleElement.textContent = 'Lỗi - Không tìm thấy sách';
+      }
+
+      const decreaseBtn = document.getElementById('decrease');
+      const increaseBtn = document.getElementById('increase');
+      const quantityInput = document.getElementById('quantity');
+      const addToCartBtn = document.getElementById('add-to-cart');
+      const buyNowBtn = document.getElementById('buy-now');
+
+      let quantity = parseInt(quantityInput.value);
+
+      decreaseBtn.addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          quantityInput.value = quantity;
+        }
+      });
+
+      increaseBtn.addEventListener('click', () => {
+        quantity++;
+        quantityInput.value = quantity;
+      });
+
+      addToCartBtn.addEventListener('click', () => {
+        alert(`Đã thêm ${quantity} cuốn "${bookData ? bookData.title : 'sách'}" vào giỏ hàng!`);
+      });
+
+      buyNowBtn.addEventListener('click', () => {
+        alert(`Bạn đã chọn mua ${quantity} cuốn "${bookData ? bookData.title : 'sách'}"!`);
+      });
+    });
+
+  </script>
+</body>
+</html>
