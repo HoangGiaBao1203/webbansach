@@ -1,4 +1,4 @@
-// detail.js
+
 
 
 const booksDatabase = {
@@ -104,7 +104,7 @@ const booksDatabase = {
     img: 'english-grammar-in-use.jpg',
     description: 'Sách ngữ pháp tiếng Anh nổi tiếng của Raymond Murphy, phù hợp cho học sinh và người học tiếng Anh trung cấp.'
 },
-    // sách bán chạy 
+   
     'dac-nhan-tam': {
         title: 'Đắc Nhân Tâm',
         price: '85.000đ',
@@ -135,35 +135,35 @@ const booksDatabase = {
          img: 'Think and grow.png',
          description: 'Napoleon Hill tiết lộ những bí mật tư duy đã giúp những người thành công nhất thế giới đạt được sự giàu có.'
      }
-    // Thêm sản phẩm ở đây
+    
 };
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Lấy tham số 'bookId' từ URL
+    
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get('bookId');
 
-    // Tìm thông tin sách trong database dựa vào bookId
+    
     const bookData = booksDatabase[bookId];
 
-    // Lấy các phần tử trên trang detail.html
+    
     const bookImgElement = document.getElementById('book-img');
     const bookTitleElement = document.getElementById('book-title');
     const bookPriceElement = document.getElementById('book-price');
     const bookDescriptionElement = document.getElementById('book-description');
-    const pageTitleElement = document.querySelector('title'); // Lấy thẻ title của trang
+    const pageTitleElement = document.querySelector('title'); 
 
     if (bookData) {
-        // Nếu tìm thấy sách, cập nhật thông tin lên trang
+        
         bookImgElement.src = bookData.img;
-        bookImgElement.alt = bookData.title; // Cập nhật alt text cho ảnh
+        bookImgElement.alt = bookData.title; 
         bookTitleElement.textContent = bookData.title;
         bookPriceElement.textContent = `Giá: ${bookData.price}`;
         bookDescriptionElement.textContent = bookData.description;
-        pageTitleElement.textContent = bookData.title; // Cập nhật tiêu đề trang web
+        pageTitleElement.textContent = bookData.title; 
     } else {
-        // Nếu không tìm thấy sách (bookId không hợp lệ hoặc không có trong database)
+        
         const detailContainer = document.querySelector('.book-detail-container');
         if(detailContainer) {
             detailContainer.innerHTML = '<h1>Không tìm thấy thông tin sách</h1><p>Vui lòng quay lại trang chủ.</p>';

@@ -11,7 +11,7 @@ body {
   color: #333;
 }
 
-/* HEADER */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -29,6 +29,13 @@ body {
   height: 60px;
   transition: transform 0.3s ease;
 }
+
+.logo a {
+  display: inline-block;
+  line-height: 0; 
+  text-decoration: none;
+}
+
 .logo img:hover {
   transform: scale(1.05);
 }
@@ -40,7 +47,7 @@ body {
   flex-grow: 1;
 }
 
-/* Tìm kiếm */
+
 .search-bar {
   display: flex;
   width: 40%;
@@ -68,7 +75,7 @@ body {
   background-color: #005f2e;
 }
 
-/* Icons */
+
 .icons {
   display: flex;
   align-items: center;
@@ -88,7 +95,6 @@ body {
   color: #007f3e;
 }
 
-/* DROPDOWN MENU */
 .sub-menu {
   display: flex;
   align-items: center;
@@ -156,7 +162,6 @@ body {
   border-radius: 5px;
 }
 
-/* BANNER */
 .banner {
   width: 100%;
   height: 600px;
@@ -168,7 +173,6 @@ body {
   object-fit: cover;
 }
 
-/* MAIN CONTENT */
 .main {
   display: flex;
   justify-content: center;
@@ -176,7 +180,7 @@ body {
   padding: 30px 50px;
 }
 
-/* Sidebar */
+
 .left-sidebar {
   flex: 1;
   max-width: 300px;
@@ -208,7 +212,7 @@ body {
   color: #003366;
 }
 
-/* Book Cards chung */
+
 .book-card,
 .new-books-cards .book-card {
   display: flex;
@@ -243,7 +247,7 @@ body {
   box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
 
-/* Book Info chung */
+
 .book-info .title {
   font-size: 14px;
   color: #222;
@@ -257,7 +261,7 @@ body {
   color: #0055aa;
 }
 
-/* Products */
+
 .right-products {
   flex: 3;
 }
@@ -270,7 +274,7 @@ body {
   color: #444;
 }
 
-/* Tabs */
+
 .tabs {
   display: flex;
   gap: 15px;
@@ -287,7 +291,7 @@ body {
   border-color: #007f3e;
 }
 
-/* Product Grid */
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -300,7 +304,7 @@ body {
   margin-top: 20px;
 }
 
-/* Product chung */
+
 .product {
   background: white;
   padding: 10px;
@@ -333,7 +337,7 @@ body {
   color: #007f3e;
 }
 
-/* Hai hình ảnh ngang */
+
 .right-products > section > .image-row {
   display: flex;
   gap: 10px;
@@ -346,7 +350,7 @@ body {
   border-radius: 8px;
 }
 
-/* Footer */
+
 .footer {
   background-color: #1a202c;
   color: #e2e8f0;
@@ -380,7 +384,7 @@ body {
   align-items: flex-start;
 }
 
-/* Link chung */
+
 .product-link,
 .book-card-link {
   text-decoration: none;
@@ -388,7 +392,7 @@ body {
   display: block;
 }
 
-/* Ẩn đối tượng */
+
 .hidden {
   display: none !important;
 }

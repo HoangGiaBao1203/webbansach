@@ -8,45 +8,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="logo">
       <a href="TrangChu.html">
-        <img src="Logoweb.png" alt="BAOLONBook Logo">
+        <img src="Logoweb.png" alt="Logo">
       </a>
       <span>Sách Việt</span>
     </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm sách...">
+      <button id="searchButton"><i class="fas fa-search"></i></button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
     <div class="icons">
       <a href="giohang.html" class="icon-link">
-        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+        <i class="fas fa-shopping-cart"></i> <span>Giỏ hàng</span>
       </a>
       <a href="taikhoan.html" class="icon-link">
-        <i class="fas fa-user"></i> Tài khoản
+        <i class="fas fa-user"></i> <span>Tài khoản</span>
       </a>
     </div>
   </header>
-  
-
-  <!-- Sub-menu -->
   <nav class="sub-menu">
-    <div class="dropdown">
-      <div class="dropdown-title"><i>☰</i> DANH MỤC SÁCH</div>
-      <div class="dropdown-content">
-        <a href="kynangsong.html">Kỹ năng sống</a>
-        <a href="vanhoc.html">Văn học</a>
-        <a href="thieunhi.html">Thiếu nhi</a>
-        <a href="hocduong.html">Học đường</a>
-        <a href="ngoaingu.html">Ngoại ngữ</a>
+    <div class="menu-left">
+      <div class="dropdown">
+        <div class="dropdown-title"><i>☰</i> DANH MỤC SÁCH</div>
+        <div class="dropdown-content">
+          <a href="kynangsong.html">Kỹ năng sống</a>
+          <a href="vanhoc.html">Văn học</a>
+          <a href="thieunhi.html">Thiếu nhi</a>
+          <a href="hocduong.html">Học đường</a>
+          <a href="ngoaingu.html">Ngoại ngữ</a>
+        </div>
+      </div>
+      <div class="other-menu">
+        <a href="Tintuc.html">Tin tức</a>
+        <a href="Lienhe.html">Liên hệ</a>
       </div>
     </div>
   </nav>
 
-  <!-- Banner -->
   <div class="banner">
     <img src="Banner.png" alt="Banner">
   </div>
 
-  <!-- Main content -->
+  
   <div class="main">
     <div class="left-sidebar">
     </div>
@@ -78,7 +84,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+ 
   <footer class="footer">
     <div class="footer-col">
 <h4>Về Sách Việt</h4>

@@ -4,31 +4,74 @@
   <meta charset="UTF-8">
   <title>Giỏ hàng - Sách Việt</title>
   <link rel="stylesheet" href="giohang.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <header class="header">
+    <div class="logo">
+      <a href="TrangChu.html">
+        <img src="Logoweb.png" alt="Logo">
+      </a>
+      <span>Sách Việt</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm sách...">
+      <button id="searchButton"><i class="fas fa-search"></i></button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <div class="icons">
+      <a href="giohang.html" class="icon-link">
+        <i class="fas fa-shopping-cart"></i> <span>Giỏ hàng</span>
+      </a>
+      <a href="taikhoan.html" class="icon-link">
+        <i class="fas fa-user"></i> <span>Tài khoản</span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="sub-menu">
+    <div class="menu-left">
+      <div class="dropdown">
+        <div class="dropdown-title"><i>☰</i> DANH MỤC SÁCH</div>
+        <div class="dropdown-content">
+          <a href="kynangsong.html">Kỹ năng sống</a>
+          <a href="vanhoc.html">Văn học</a>
+          <a href="thieunhi.html">Thiếu nhi</a>
+          <a href="hocduong.html">Học đường</a>
+          <a href="ngoaingu.html">Ngoại ngữ</a>
+        </div>
+      </div>
+      <div class="other-menu">
+        <a href="Tintuc.html">Tin tức</a>
+        <a href="Lienhe.html">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
   <div class="cart-container">
-    <h2>Giỏ hàng của bạn</h2>
+    <h2><i class="fas fa-shopping-cart"></i> Giỏ hàng của bạn</h2>
+
     <div class="cart-item">
       <img src="book1.jpg" alt="Tư duy nhanh và chậm">
       <div class="cart-info">
         <p class="name">Tư duy nhanh và chậm</p>
         <p class="price">112.000đ</p>
-        <button>Xóa</button>
+        <button><i class="fas fa-trash-alt"></i> Xóa</button>
       </div>
     </div>
+
     <div class="cart-item">
       <img src="book3.jpg" alt="Sức mạnh của thói quen">
       <div class="cart-info">
         <p class="name">Sức mạnh của thói quen</p>
         <p class="price">88.000đ</p>
-        <button>Xóa</button>
+        <button><i class="fas fa-trash-alt"></i> Xóa</button>
       </div>
     </div>
 
     <div class="total">
-      <strong>Tổng tiền: </strong>200.000đ
+      <span>Tổng tiền:</span> <strong>200.000đ</strong>
     </div>
-    <button class="checkout-btn">Thanh toán</button>
+    <button class="checkout-btn"><i class="fas fa-credit-card"></i> Thanh toán</button>
   </div>
 </body>
 </html>

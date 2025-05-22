@@ -9,7 +9,6 @@
  
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="logo">
       <a href="TrangChu.html">
@@ -32,7 +31,6 @@
     </div>
   </header>
 
-  <!-- Sub-menu -->
   <nav class="sub-menu">
     <div class="menu-left">
       <div class="dropdown">
@@ -52,14 +50,12 @@
     </div>
   </nav>
 
-  <!-- Banner -->
+
   <div class="banner">
     <img src="1600w-h4TXEWcWuhQ.png" alt="Banner" />
   </div>
 
-  <!-- Main content -->
   <div class="main">
-    <!-- Bên trái: Sách bán chạy -->
     <div class="left-sidebar">
       <aside class="sidebar best-sellers-cards">
         <h3>SÁCH BÁN CHẠY</h3>
@@ -132,7 +128,7 @@
       </aside>
     </div>
 
-    <!-- Bên phải: Sách kỹ năng sống -->
+  
     <div class="right-products">
       <section class="products">
         <h2>Trang chủ</h2>
@@ -212,13 +208,11 @@
           </a>
         </div>
 
-        <!-- Hai hình ảnh nằm ngang -->
         <div style="display: flex; gap: 10px; margin-top: 20px;">
           <img src="banner1.jpg" alt="Banner 1" style="width: 50%; height: auto;">
           <img src="Thêm tiêu đề.png" alt="Banner 2" style="width: 50%; height: auto;">
         </div>
 
-        <!-- Các sản phẩm còn lại -->
         <div class="product-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px;">
           <a href="detail.html?bookId=doraemon" class="product-link">
             <div class="product">
@@ -274,7 +268,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  
   <footer class="footer">
     <div class="container mx-auto">
       <div class="footer-content">
@@ -311,7 +305,7 @@
   </footer>
 
   <script>
-   // Hàm debounce để hạn chế tần suất gọi hàm tìm kiếm
+   
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -324,21 +318,21 @@ function debounce(func, wait) {
   };
 }
 
-// Hàm tìm kiếm sách và hiển thị kết quả trong khung
+
 function searchBooks() {
-  let input = document.getElementById('searchInput').value.toLowerCase(); // Lấy giá trị đầu vào và chuyển thành chữ thường
-  let products = document.querySelectorAll('.product'); // Lấy tất cả sản phẩm
-  let searchResults = document.getElementById('searchResults'); // Lấy khung kết quả
-  searchResults.innerHTML = ''; // Xóa nội dung cũ
+  let input = document.getElementById('searchInput').value.toLowerCase(); 
+  let products = document.querySelectorAll('.product'); 
+  let searchResults = document.getElementById('searchResults'); 
+  searchResults.innerHTML = ''; 
 
   if (!input.trim()) {
-    searchResults.style.display = 'none'; // Ẩn khung nếu không có từ khóa
+    searchResults.style.display = 'none'; 
     return;
   }
 
-  let results = []; // Mảng lưu kết quả tìm kiếm
+  let results = []; 
 
-  // Duyệt qua sản phẩm để tìm khớp từ khóa
+  
   products.forEach(product => {
     let title = product.querySelector('p').textContent.toLowerCase();
     if (title.includes(input)) {
@@ -349,7 +343,6 @@ function searchBooks() {
     }
   });
 
-  // Hiển thị kết quả trong khung
   if (results.length === 0) {
     searchResults.innerHTML = '<div class="no-results">Không tìm thấy sách nào phù hợp</div>';
   } else {
@@ -366,24 +359,24 @@ function searchBooks() {
     });
   }
 
-  searchResults.style.display = 'block'; // Hiển thị khung kết quả
+  searchResults.style.display = 'block'; 
 }
 
-// Hàm xử lý khi nhấn nút tìm hoặc Enter
+
 function handleSearch() {
-  let input = document.getElementById('searchInput').value.toLowerCase().trim(); // Lấy giá trị và loại bỏ khoảng trắng
+  let input = document.getElementById('searchInput').value.toLowerCase().trim(); 
   let products = document.querySelectorAll('.product');
   let searchResults = document.getElementById('searchResults');
   let firstResult = null;
 
-  // Nếu ô tìm kiếm rỗng, hiển thị thông báo và không chuyển hướng
+  
   if (!input) {
     searchResults.innerHTML = '<div class="no-results">Vui lòng nhập từ khóa tìm kiếm</div>';
     searchResults.style.display = 'block';
     return;
   }
 
-  // Tìm sản phẩm đầu tiên khớp
+  
   products.forEach(product => {
     let title = product.querySelector('p').textContent.toLowerCase();
     if (title.includes(input) && !firstResult) {
@@ -391,7 +384,7 @@ function handleSearch() {
     }
   });
 
-  // Chuyển hướng đến trang chi tiết nếu có kết quả
+  
   if (firstResult) {
     window.location.href = firstResult;
   } else {
@@ -400,20 +393,19 @@ function handleSearch() {
   }
 }
 
-// Gắn sự kiện nhập liệu với debounce
+
 document.getElementById('searchInput').addEventListener('input', debounce(searchBooks, 300));
 
-// Gắn sự kiện click cho nút tìm kiếm
 document.getElementById('searchButton').addEventListener('click', handleSearch);
 
-// Gắn sự kiện nhấn Enter
+
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
   if (e.key === 'Enter') {
     handleSearch();
   }
 });
 
-// Ẩn khung kết quả khi nhấp ra ngoài
+
 document.addEventListener('click', function(e) {
   let searchBar = document.querySelector('.search-bar');
   if (!searchBar.contains(e.target)) {
